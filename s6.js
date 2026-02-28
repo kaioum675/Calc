@@ -18,11 +18,11 @@ function calcu() {
   let rdm = rdmtd * 0.4 + rdmctrl * 0.6;
   document.getElementById("rdmtt").value = rdm.toFixed(2);
 
-  // ===== MDSol 2 (TD 40% + CTRL 40% + TP 20%) =====
+  // ===== MDSol 2  =====
   let mdstd = parseFloat(document.getElementById("mdstd").value) || 0;
   let mdsctrl = parseFloat(document.getElementById("mdsctrl").value) || 0;
   let mdstp = parseFloat(document.getElementById("mdstp").value) || 0;
-  let mds = mdstd * 0.4 + mdsctrl * 0.4 + mdstp * 0.2;
+  let mds = mdstd * 0.2 + mdsctrl * 0.6 + mdstp * 0.2;
   document.getElementById("mdstt").value = mds.toFixed(2);
 
   // ===== Topo 2 (CTRL 60% + TP 40%) =====
@@ -50,10 +50,10 @@ function calcu() {
 
   // ===== المجموع العام =====
   let total =
-    hyd + ba + rdm + mds + topo + tt + mdc +
-    eme + dao + stage;
+    hyd*2 + ba*2 + rdm*2 + mds*3 + topo*2 + tt*2 + mdc*2 +
+    eme*1 + dao*2 + stage*1;
 
-  let general = total / 10; // عدد المواد
+  let general = total / 19; // عدد المواد
 
   document.getElementById("toto").innerText = general.toFixed(2);
 }
