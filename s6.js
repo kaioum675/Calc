@@ -1,3 +1,4 @@
+// دالة للتحقق من أن القيمة بين 0 و 20
 function validateGrade(input) {
   let value = parseFloat(input.value);
   if (isNaN(value)) return;
@@ -8,7 +9,36 @@ function validateGrade(input) {
   }
 }
 
+// إضافة مستمعي الأحداث لجميع حقول الإدخال عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", function() {
+  const inputIds = [
+    "hydtd", "hydctrl", "batd", "bactrl", "rdmtd", "rdmctrl",
+    "mdstd", "mdsctrl", "mdstp", "topoctrl", "topotp", "pgctt",
+    "dessintt", "tttd", "ttctrl", "mdctp", "mdctrl", "geott"
+  ];
+  
+  inputIds.forEach(id => {
+    const input = document.getElementById(id);
+    if (input) {
+      input.addEventListener("change", function() {
+        validateGrade(this);
+      });
+    }
+  });
+});
+
 function calcu() {
+  // التحقق من صحة جميع المدخلات
+  const inputIds = [
+    "hydtd", "hydctrl", "batd", "bactrl", "rdmtd", "rdmctrl",
+    "mdstd", "mdsctrl", "mdstp", "topoctrl", "topotp", "pgctt",
+    "dessintt", "tttd", "ttctrl", "mdctp", "mdctrl", "geott"
+  ];
+  
+  inputIds.forEach(id => {
+    const input = document.getElementById(id);
+    if (input) validateGrade(input);
+  });
 
   // ===== Hydraulique 2 =====
   let hydtd = parseFloat(document.getElementById("hydtd").value) || 0;
