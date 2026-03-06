@@ -1,3 +1,13 @@
+function validateGrade(input) {
+  let value = parseFloat(input.value);
+  if (isNaN(value)) return;
+  if (value < 0) {
+    input.value = 0;
+  } else if (value > 20) {
+    input.value = 20;
+  }
+}
+
 function calcu() {
 
   // ===== Hydraulique 2 =====
