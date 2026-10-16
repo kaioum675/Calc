@@ -71,16 +71,10 @@ function calcu() {
   document.getElementById("topott").value = topo.toFixed(2);
 
   // ===== Transfer Thermique =====
-  let tttd = parseFloat(document.getElementById("tttd").value) || 0;
-  let ttctrl = parseFloat(document.getElementById("ttctrl").value) || 0;
-  let tt = tttd * 0.4 + ttctrl * 0.6;
-  document.getElementById("tttt").value = tt.toFixed(2);
+  let py = parseFloat(document.getElementById("pytt").value) || 0;
 
   // ===== MDC 2 (TP 40% + CTRL 60%) =====
-  let mdctp = parseFloat(document.getElementById("mdctp").value) || 0;
-  let mdctrl = parseFloat(document.getElementById("mdctrl").value) || 0;
-  let mdc = mdctp * 0.4 + mdctrl * 0.6;
-  document.getElementById("mdctt").value = mdc.toFixed(2);
+  let code = parseFloat(document.getElementById("cptt").value) || 0;
 
   // ===== المواد المباشرة =====
   let eme = parseFloat(document.getElementById("pgctt").value) || 0;
@@ -89,7 +83,7 @@ function calcu() {
 
   // ===== المجموع العام =====
   let total =
-    hyd*2 + ba*2 + rdm*2 + mds*3 + topo*2 + tt*2 + mdc*2 +
+    hyd*2 + ba*2 + rdm*2 + mds*3 + topo*2 + py*2 + code*2 +
     eme*1 + dao*2 + stage*1;
 
   let general = total / 19; // عدد المواد
