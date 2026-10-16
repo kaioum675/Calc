@@ -1,4 +1,201 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <h1>Coming soon....</h1>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semester 7 — CalcInfo</title>
+  <link rel="icon" type="image/x-icon" href="ico.png">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .subject {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .subject span {
+      min-width: 120px;
+      font-weight: bold;
+    }
+    .subject input {
+      flex: 1 1 100px;
+      max-width: 120px;
+      background-color: #2a2a2a;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 6px;
+      padding: 4px 8px;
+      text-align: center;
+    }
+    .subject input:focus {
+      outline: none;
+      border-color: #0d6efd;
+      box-shadow: 0 0 5px #0d6efd;
+    }
+    .average {
+      font-weight: bold;
+      background-color: #333;
+    }
+    .my-button {
+      display: inline-block;
+      background-color: grey;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      margin-left: 8px;
+      margin-bottom: 8px;
+      margin-top: 12px;
+      text-decoration: none;
+    }
+    @media(max-width: 576px) {
+      .subject {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .subject span, .subject input {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="bg-dark text-white">
+      <nav class="container navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="ico.png" alt="logo" class="me-2 logo-img" width="100" height="100">
+          <strong>CalcInfo</strong>
+        </a>
+        <div class="ms-auto">
+          <a class="my-button" href="index.html"><b>S5</b></a>
+          <a class="my-button" href="s6.html"><b>S6</b></a>
+          <a class="my-button" href="s8.html"><b>S8</b></a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title">Semester 7 — Calculator</h3>
+
+          <!-- Hydraulique 2 -->
+          <div class="card">
+            <div class="subject">
+              <span>Charpente Metallique 1</span>
+              <input id="hydtd" type="number" min="0" max="20" step="0.01" placeholder="Note TD /20" oninput="calcu()">
+              <input id="hydctrl" type="number" min="0" max="20" step="0.01" placeholder="Control /20" oninput="calcu()">
+              <input id="hydtt" class="average" readonly placeholder="Total Charpente Metallique 1">
+            </div>
+          </div>
+
+          <!-- Béton Armé 2 -->
+          <div class="card">
+            <div class="subject">
+              <span>STR en BA 1</span>
+              <input id="batd" type="number" min="0" max="20" step="0.01" placeholder="Note TD /20" oninput="calcu()">
+              <input id="bactrl" type="number" min="0" max="20" step="0.01" placeholder="Control /20" oninput="calcu()">
+              <input id="batt" class="average" readonly placeholder="Total STR en BA 1">
+            </div>
+          </div>
+
+          <!-- RDM 3 -->
+          <div class="card">
+            <div class="subject">
+              <span>Dynamique des structures 1</span>
+              <input id="rdmtd" type="number" min="0" max="20" step="0.01" placeholder="Note TD /20" oninput="calcu()">
+              <input id="rdmctrl" type="number" min="0" max="20" step="0.01" placeholder="Control /20" oninput="calcu()">
+              <input id="rdmtt" class="average" readonly placeholder="Total Dynamique des structures 1">
+            </div>
+          </div>
+
+          <!-- MDSol 2 -->
+          <div class="card">
+            <div class="subject">
+              <span>Fondation et Souténement</span>
+              <input id="mdstd" type="number" min="0" max="20" step="0.01" placeholder="Note TD /20" oninput="calcu()">
+              <input id="mdsctrl" type="number" min="0" max="20" step="0.01" placeholder="Control /20" oninput="calcu()">
+              <input id="mdstt" class="average" readonly placeholder="Total Fondation et Souténement">
+            </div>
+          </div>
+
+          <!-- Topo 2 -->
+          <div class="card">
+            <div class="subject">
+              <span>M.M.C 1</span>
+              <input id="topoctrl" type="number" min="0" max="20" step="0.01" placeholder="Control /20" oninput="calcu()">
+              <input id="topotp" type="number" min="0" max="20" step="0.01" placeholder="Note TP /20" oninput="calcu()">
+              <input id="topott" class="average" readonly placeholder="Total M.M.C 1">
+            </div>
+          </div>
+
+          <!-- C.A.O 1 -->
+          <div class="card">
+            <div class="subject">
+              <span>C.A.O 1</span>
+              <input id="pgctt" type="number" min="0" max="20" step="0.01" placeholder="note C.A.O 1 /20" oninput="calcu()">
+            </div>
+          </div>
+
+          <!-- DAO 1 -->
+          <div class="card">
+            <div class="subject">
+              <span>DAO 2</span>
+              <input id="dessintt" type="number" min="0" max="20" step="0.01" placeholder="note DAO 2 /20" oninput="calcu()">
+            </div>
+          </div>
+
+          <!-- Transfer Thermique -->
+          <div class="card">
+            <div class="subject">
+              <span>Programmation avancée en Python</span>
+              <input id="pytt" type="number" min="0" max="20" step="0.01" placeholder="note Programmation /20" oninput="calcu()">
+            </div>
+          </div>
+          
+          <!-- MDC 2 -->
+          <div class="card">
+            <div class="subject">
+              <span>Code des marchés publics</span>
+              <input id="pytt" type="number" min="0" max="20" step="0.01" placeholder="note  /20" oninput="calcu()">
+            </div>
+          </div>
+
+          <!-- stage en entrprise -->
+          <div class="card">
+            <div class="subject">
+              <span>Projet Personnel Professionnel</span>
+              <input id="geott" type="number" min="0" max="20" step="0.01" placeholder="note PPP /20" oninput="calcu()">
+            </div>
+          </div>
+
+          <!-- Total -->
+          <div class="card bg-primary text-white text-center">
+            <strong>La note générale: <span id="toto">0.00</span></strong>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mt-3 text-center">
+        <small class="text-muted">by: Kaioum</small>
+      </div>
+    </main>
+
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="s6.js"></script>
+</body>
 </html>
