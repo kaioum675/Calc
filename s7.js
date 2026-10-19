@@ -65,8 +65,8 @@ function calcu() {
   document.getElementById("mdstt").value = mds.toFixed(2);
 
   // ===== Topo 2 (CTRL 60% + TP 40%) =====
-  let topoctrl = parseFloat(document.getElementById("topoctrl").value) || 0;
   let topotp = parseFloat(document.getElementById("topotp").value) || 0;
+  let topoctrl = parseFloat(document.getElementById("topoctrl").value) || 0;
   let topo = topoctrl * 0.6 + topotp * 0.4;
   document.getElementById("topott").value = topo.toFixed(2);
 
